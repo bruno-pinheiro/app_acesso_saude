@@ -5,7 +5,6 @@ library(dplyr)
 library(tidyr)
 library(leaflet)
 library(sf)
-library(asha)
 
 # IMPORTAR DADOS --------------------------------------------------------------
 load("data/ubs_malhas_ok.rda")
