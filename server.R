@@ -3,9 +3,10 @@ function(input, output, session) {
   ## Interactive Map ###########################################
   # Create the map
   
-  pal <- colorFactor("viridis", domain = ubs_malhas$input$indicador)
-  
   output$mapa <- renderLeaflet({
+    
+    pal <- colorFactor("viridis", domain = ubs_malhas$input$indicador[ubs_malhas$modelo == input$modelo])
+    
     leaflet() %>% 
       addTiles() %>% 
       setView(lng = -46.64803, lat = -23.64992, zoom = 11) %>% 
@@ -20,6 +21,8 @@ function(input, output, session) {
     })
     # observe para adicionar cor conforme seleção do indicador
     observe({
+      pal <- colorFactor("viridis", domain = ubs_malhas$input$indicador[ubs_malhas$modelo == input$modelo])
+      
       # Criar rótulos para os objetos
       labels_setor <- sprintf(
         "<strong>%s</strong><br/>

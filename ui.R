@@ -24,7 +24,7 @@ navbarPage("Acessibilidade à saúde básica", id="nav",
                                       h2("Interaja"),
                                       
                                       selectInput("modelo", "Modelo", vars_modelo, selected = "vigente"),
-                                      selectInput("indicador", "Indicador", vars_setor, selected = "total_med_ubs"),
+                                      selectInput("indicador", "Indicador", vars_setor, selected = "minutos_classes_setor"),
                                       # conditionalPanel(
                                       #   "is.numeric(input.indicador)",
                                       #   numericInput("quantis", "Nº de Quantis", 5)
