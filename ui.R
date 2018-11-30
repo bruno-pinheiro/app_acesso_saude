@@ -1,8 +1,4 @@
-library(leaflet)
-
 # Choices for drop-downs
-
-
 navbarPage("Acessibilidade à saúde básica", id="nav",
            
            tabPanel("Mapa interativo",
@@ -25,10 +21,8 @@ navbarPage("Acessibilidade à saúde básica", id="nav",
                                       
                                       selectInput("modelo", "Modelo", vars_modelo, selected = "vigente"),
                                       selectInput("indicador", "Indicador", vars_setor, selected = "minutos_classes_setor"),
-                                      # conditionalPanel(
-                                      #   "is.numeric(input.indicador)",
-                                      #   numericInput("quantis", "Nº de Quantis", 5)
-                                      # ),
+                                      selectInput("cores", "Esquema de cores",
+                                                  rownames(subset(brewer.pal.info, category %in% "seq"))),
                                       plotOutput("densIndicador", height = 200),
                                       valueBoxOutput("media_indicador", width = 250)
                         ),

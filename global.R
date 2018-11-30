@@ -5,7 +5,7 @@ library(dplyr)
 library(tidyr)
 library(leaflet)
 library(sf)
-library(viridis)
+library(RColorBrewer)
 
 # IMPORTAR DADOS --------------------------------------------------------------
 load("data/ubs_malhas_ok.rda")
