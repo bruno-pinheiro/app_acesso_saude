@@ -33,7 +33,7 @@ function(input, output, session) {
     pal <- colorpal()
     
     leaflet() %>% 
-      addTiles() %>% 
+      addProviderTiles(providers$OpenStreetMap.BlackAndWhite) %>% 
       setView(lng = -46.64803, lat = -23.64992, zoom = 11)
   })
   
